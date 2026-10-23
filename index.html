@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#123a32">
-  <meta name="description" content="The Hawai'i Super Intelligence Hub is coming soon: a statewide place to explore SI and shape what comes next.">
-  <title>Hawai'i SI Hub | Super Intelligence, shaped by Hawai'i</title>
+  <meta name="theme-color" content="#06101b">
+  <meta name="description" content="Hawai'i Super Intelligence Hub. Coming soon.">
+  <title>Hawai'i SI Hub | Coming Soon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://images.unsplash.com">
   <style>
     :root {
@@ -197,51 +197,44 @@
     @media (max-width: 380px) {
       .launch-copy h1 { font-size: 49px; }
     }
+
+    body { min-height: 100vh; overflow: hidden; color: #fff; background: #06101b; }
+    .launch-screen { position: relative; display: grid; width: 100%; min-height: 100vh; min-height: 100svh; place-items: center; overflow: hidden; isolation: isolate; background: #06101b; }
+    .image-wall { position: absolute; z-index: -2; inset: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .image-panel { min-width: 0; background-position: center; background-size: cover; filter: saturate(.72) contrast(1.12); transform: scale(1.035); animation: reveal 1.2s ease-out both; }
+    .image-panel:nth-child(2) { animation-delay: .12s; }
+    .image-panel:nth-child(3) { animation-delay: .24s; }
+    .image-panel--orbit { background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85"); }
+    .image-panel--circuit { background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"); }
+    .image-panel--intelligence { background-image: url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85"); }
+    .launch-screen::before, .launch-screen::after { position: absolute; z-index: -1; inset: 0; content: ""; pointer-events: none; }
+    .launch-screen::before { background: linear-gradient(90deg, rgba(3,10,18,.72), rgba(3,10,18,.4) 50%, rgba(3,10,18,.72)), linear-gradient(0deg, rgba(3,10,18,.56), transparent 50%, rgba(3,10,18,.3)); }
+    .launch-screen::after { background: radial-gradient(ellipse at center, rgba(4,18,30,.04) 0%, rgba(4,18,30,.36) 68%, rgba(4,18,30,.72) 100%); }
+    .launch-screen h1 { margin: 0; padding: 24px; color: #f1fcff; font-family: "Orbitron", "Arial", sans-serif; font-size: 72px; font-weight: 600; line-height: 1.1; letter-spacing: 0; text-align: center; text-shadow: 0 0 18px rgba(79,221,255,.85), 0 0 54px rgba(45,164,255,.55); animation: signal 1s .2s ease-out both; }
+    @keyframes reveal { from { opacity: 0; transform: scale(1.08); } to { opacity: 1; transform: scale(1.035); } }
+    @keyframes signal { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 700px) {
+      .image-wall { grid-template-columns: 1fr; grid-template-rows: repeat(3, minmax(0, 1fr)); }
+      .image-panel { background-position: center 42%; }
+      .launch-screen h1 { font-size: 48px; }
+      .launch-screen::before { background: linear-gradient(90deg, rgba(3,10,18,.65), rgba(3,10,18,.32), rgba(3,10,18,.65)), linear-gradient(0deg, rgba(3,10,18,.58), transparent 50%, rgba(3,10,18,.4)); }
+    }
+    @media (max-width: 380px) {
+      .launch-screen h1 { font-size: 38px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .image-panel, .launch-screen h1 { animation: none; }
+    }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <nav class="nav-wrap" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="Hawai'i Super Intelligence Hub home">
-        <span class="brand-mark" aria-hidden="true">SI</span>
-        <span>Hawai'i SI Hub<small>Super Intelligence</small></span>
-      </a>
-      <a class="launch-nav-link" href="#about">Coming soon</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero launch-hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <div class="hero-copy launch-copy">
-          <p class="eyebrow">A statewide hub for Hawai'i</p>
-          <h1 id="hero-title">Super Intelligence, shaped by Hawai'i.</h1>
-          <p>A new space to explore Super Intelligence, its possibilities, and what it means for our islands and communities. We're bringing the statewide conversation together.</p>
-          <span class="launch-status">Coming soon</span>
-        </div>
-        <div class="hero-note"><span aria-hidden="true"></span>For every island. For everyone.</div>
-      </div>
-    </section>
-
-    <section class="launch-about" id="about" aria-labelledby="about-title">
-      <div class="launch-about-inner">
-        <div>
-          <p class="eyebrow">Hawai'i SI Hub</p>
-          <h2 id="about-title">A shared place to learn, connect, and look ahead.</h2>
-        </div>
-        <p>We are building a statewide hub for Super Intelligence (SI): a place for people across Hawai'i to learn, exchange perspectives, and help shape what comes next. The hub is on its way.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="launch-footer">
-    <div class="footer-inner">
-      <a class="brand" href="#top" aria-label="Hawai'i Super Intelligence Hub home">
-        <span class="brand-mark" aria-hidden="true">SI</span>
-        <span>Hawai'i SI Hub<small>Super Intelligence</small></span>
-      </a>
-      <p>A statewide conversation is taking shape.</p>
+  <main class="launch-screen" aria-label="Hawai'i Super Intelligence Hub">
+    <div class="image-wall" aria-hidden="true">
+      <div class="image-panel image-panel--orbit"></div>
+      <div class="image-panel image-panel--circuit"></div>
+      <div class="image-panel image-panel--intelligence"></div>
     </div>
-  </footer>
+    <h1>COMING SOON</h1>
+  </main>
 </body>
 </html>
